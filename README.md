@@ -3,7 +3,7 @@ For a general discussion of the work, see the pdf in the repository which has a 
 
 ## Overview of the task
 The problem of colorizing with and without color hints
-<img src=/images/MainProblemExample.png alt="drawing" height="500" width="500"\><img src=/images/ModelSchematic.png alt="drawing" height="500" width="400"/>
+<img src=/images/MainProblemExample.png alt="drawing" height="500" width="500"/><img src=/images/ModelSchematic.png alt="drawing" height="500" width="400"/>
 
 Examining the literature, one can find that there has actually been a number of academic investigations into the question of deep-learning color for black and white images. There has in fact even been some exploration by researchers directly into the problem of deep-learning color for Manga itself [cGAN-based Manga Colorization \cite{GANColorization}]; however, I found this work and others to be largely incomplete/inconclusive or, in my opinion, flawed regarding a realistic extension to industry and use by artists. From my search, all previous works have explored the topic of unsupervised deep-learning for colorization, which as noted before is not the primary implementation I have in mind, but since they serve as a backdrop to my architecture and one of the side-explorations conducted here, I first briefly review the recent developments on this topic.\\
 

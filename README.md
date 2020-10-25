@@ -1,4 +1,7 @@
 # MangaColorization_DeepLearning
+## two
+### three
+#### four
 For a general discussion of the work, see the pdf in the repository. 
 
 <img src=/images/MainProblemExample.png alt="drawing" width="500"/>

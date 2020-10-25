@@ -4,7 +4,7 @@ For a general discussion of the work, see the pdf in the repository which has a 
 ## Overview of the task
 <img src=/images/MainProblemExample.png alt="drawing" height="500" width="500"/><img src=/images/ModelSchematic.png alt="drawing" height="500" width="400"/>
 
-### Generator
+*Generator*
 <img src=/images/GeneratorModel.png alt="drawing" width="600"/>
 ### Discriminator
 <img src=/images/DiscriminatorModel.png alt="drawing" width="600"/>

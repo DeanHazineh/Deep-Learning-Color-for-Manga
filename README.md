@@ -1,2 +1,4 @@
 # MangaColorization_DeepLearning
-V1 Code Package completed and tested. Readme and Description will be added -- 7/5/2020
+For a general discussion of the work, see the pdf in the repository. 
+
+

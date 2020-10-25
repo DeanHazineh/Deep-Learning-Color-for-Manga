@@ -5,9 +5,9 @@ For a general discussion of the work, see the pdf in the repository.
 
 <img src=/images/ModelSchematic.png alt="drawing" width="500"/>
 
-<img src=/images/TrainingData.png alt="drawing" width="500"/>
-
 <img src=/images/CompareSketchify.png alt="drawing" width="200"/>
+
+<img src=/images/TrainingData.png alt="drawing" width="500"/>
 
 <img src=/images/ColorCueGeneration.png alt="drawing" width="200"/>
 

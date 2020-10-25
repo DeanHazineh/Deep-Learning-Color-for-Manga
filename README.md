@@ -1,13 +1,12 @@
 # MangaColorization_DeepLearning
-## two
-### three
-#### four
-For a general discussion of the work, see the pdf in the repository. 
+For a general discussion of the work, see the pdf in the repository which has a complete discussion of the concept. 
 
+## Overview of the task
 <img src=/images/MainProblemExample.png alt="drawing" width="500"/>
-
 <img src=/images/ModelSchematic.png alt="drawing" width="400"/>
 
+
+## Creating Training Data
 <img src=/images/CompareSketchify.png alt="drawing" width="600"/> <img src=/images/TrainingData.png alt="drawing" width="350"/>
 
 

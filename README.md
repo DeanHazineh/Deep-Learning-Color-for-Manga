@@ -2,8 +2,7 @@
 For a general discussion of the work, see the pdf in the repository which has a complete discussion of the concept. 
 
 ## Overview of the task
-<img src=/images/MainProblemExample.png alt="drawing" width="500"/>
-<img src=/images/ModelSchematic.png alt="drawing" width="400"/>
+<img src=/images/MainProblemExample.png alt="drawing" width="500"/><img src=/images/ModelSchematic.png alt="drawing" width="400"/>
 
 <img src=/images/GeneratorModel.png alt="drawing" width="400"/><img src=/images/DiscriminatorModel.png alt="drawing" width="400"/>
 

@@ -7,6 +7,6 @@ For a general discussion of the work, see the pdf in the repository.
 
 <img src=/images/CompareSketchify.png alt="drawing" width="500"/>
 
-<img src=/images/TrainingData.png alt="drawing" height="500" width="400"/><img src=/images/ColorCueGeneration.png alt="drawing" height="500" width="400"/>
+<img src=/images/TrainingData.png alt="drawing" height="700" width="400"/><img src=/images/ColorCueGeneration.png alt="drawing" height="700" width="400"/>
 
 <img src=/images/NoColorCuesResults.png alt="drawing" width="200"/><img src=/images/WithColorCuesResults.png alt="drawing" width="200"/>

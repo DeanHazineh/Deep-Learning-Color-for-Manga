@@ -3,7 +3,7 @@ For a general discussion of the work, see the pdf in the repository.
 
 <img src=/images/MainProblemExample.png alt="drawing" width="500"/>
 
-<img src=/images/ModelSchematic.png alt="drawing" width="500"/>
+<img src=/images/ModelSchematic.png alt="drawing" width="300"/>
 
 <img src=/images/CompareSketchify.png alt="drawing" width="500"/> <img src=/images/TrainingData.png alt="drawing" height="600" width="400"/>
 

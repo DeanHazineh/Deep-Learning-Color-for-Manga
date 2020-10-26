@@ -1,5 +1,5 @@
 # Manga Colorization via cGAN for Deep learning
-A PDF version with discussion of the work is included in the repo. The discussion from there is repopulated below:
+A PDF version with discussion of the work is included in the repo. The discussion from there is repopulated below for now until I get around to writing a clean summary:
 
 ## Overview of the task
 The problem of colorizing with and without color hints

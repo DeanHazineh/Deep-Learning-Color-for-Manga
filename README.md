@@ -2,7 +2,9 @@
 
 ## Overview of the task
 The problem of colorizing with and without color hints
-<img src=/images/MainProblemExample.png alt="drawing" height="500" width="500"/><img src=/images/ModelSchematic.png alt="drawing" height="500" width="400"/>
+
+<img src=/images/ModelSchematic.png alt="drawing" height="500" width="400"/>
+<img src=/images/MainProblemExample.png alt="drawing" height="400" width="400"/>
 
 
 In this work, the goal was to explore if deep learning can be employed
@@ -184,9 +186,11 @@ its input [PatchGan Refernece @PatchGanGuide]. Variations to this value
 were not probed or tested for this study.
 
 Generator Model
+
 <img src=/images/GeneratorModel.png alt="drawing" width="600"/>
 
 Discriminator Model
+
 <img src=/images/DiscriminatorModel.png alt="drawing" width="600"/>
 
 

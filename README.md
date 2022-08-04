@@ -28,52 +28,12 @@ solution that allows the artist to give input via the “color highlight”
 used for the overall image. With that being said, I have also generated
 results and a study excluding the artist input entirely (setting color
 inputs to a zero-matrix and retraining the model) in order to
-investigate in an academic nature what the results would be. For this
-report, I think both are equally interesting and amusing investigations
-worth presenting.\
-
-In terms of impact, creating a solution to this challenge is actually an
-extremely exciting prospect which may be less obvious to those who are
-not fans of the genre. According to sources cited on two reports [Anime
-News Network @ANN, Exoclick @ExoClick [@Report]], Manga make up almost
-40% of all books and magazines published in Japan and is estimated to
-generate the equivalent of 4 billion revenue yearly, not including ad
-sales and the growing potential of further digitization. In China, the
-market for Manhua which is similar to Japan’s Manga, is estimated to be
-valued at 26 billion US dollars and has grown almost 14% since 2017. If
-that is not impressive enough, the famous Japanese Manga, One Piece,
-which is still in production, has currently sold over 460 million print
-copies globally almost matching the highest selling book of all time,
-Don Quixote by Miguel De Cervantes. Lastly as a die hard Manga fan and
-life-time reader, I can attest that colored prints in Manga are a luxury
-that many in the community would love to see happen but have previously
-accepted to be an impossible prospect and one that could only come at
-the cost of significant delay to the standard weekly chapter publication
-time. At this moment in time, only the most famous Manga, e.g. One
-Piece, can be republished in digital color which also occurs with a
-time-delay relative to the primary black-and-white releases and to my
-knowledge, this is only ever done within the industry manually by
-professional artists. My hope is that this work can generate new insight
-and inspiration into an automated and more general implementation to
-this light-hearted desire.
-
-Examining the literature, one can find that there has actually been a
-number of academic investigations into the question of deep-learning
-color for black and white images. There has in fact even been some
-exploration by researchers directly into the problem of deep-learning
-color for Manga itself [cGAN-based Manga Colorization @GANColorization];
-however, I found this work and others to be largely
-incomplete/inconclusive or, in my opinion, flawed regarding a realistic
-extension to industry and use by artists. From my search, all previous
-works have explored the topic of unsupervised deep-learning for
-colorization, which as noted before is not the primary implementation I
-have in mind, but since they serve as a backdrop to my architecture and
-one of the side-explorations conducted here, I first briefly review the
-recent developments on this topic.\
+investigate in an academic nature what the results would be. I think both are equally interesting and amusing investigations
+worth presenting.
 
 Although outside the context of Manga, a great and relevant introduction
 to the topic of unsupervised, deep-learning colorization is given by
-Richard Zhang et al at Adobe Research [Group Github, @ColorPhotographs].
+Richard Zhang et al at Adobe Research.
 By training a feed-forward pass CNN on over one-million images from the
 imagenet database, their group published in 2016 the then
 state-of-the-art architecture for converting gray-scale photographs to
@@ -81,8 +41,7 @@ vibrant colored images. He has aptly described this problem of general,
 unsupervised colorization as “the problem of hallucinating a plausible
 color version of the photograph”, but this is immediately seen to be a
 severely under-constrained inverse problem necessitating some form of
-support [Colorful Image Colorization Paper @Colorful
-[@Image; @Colorization]]. By modifying the standard CNN algorithm (with
+support. By modifying the standard CNN algorithm (with
 some changes outside the context of this work) and with enough training
 data, the group demonstrated that highly realistic colorization can be
 achieved under the context of re-framing the problem as a large
@@ -90,7 +49,7 @@ classification task. The performance is then found to be constrained
 largely by the usual “data-set feature bias”. This and previous works
 therein cited provide guidance that a CNN can be an effective
 architecture for learning color thus encouraging its use as a starting
-point in our task.\
+point in our task.
 
 With that said, however, the previously cited architecture by the Zhang
 team in its current form would be insufficient for this task without
@@ -100,7 +59,7 @@ a set (at this current time) on the order of tens of thousands of images
 instead of millions of images like in the cited work. A full re-framing
 of our problem as a classification task where shapes are associated to
 colors, even in the supervised color hint scenario, appears unlikely to
-be effective[^1]. Second and more importantly, their work and similar
+be effective. Second and more importantly, their work and similar
 work in the field at that time (around 2016) implemented the Euclidean
 L2 loss between the ground truth and predicted color as the objective
 function. Their work has shown that without some complex randomization,
@@ -109,13 +68,12 @@ results in total contrast to the typical color palletes in Manga/Anime
 art-style. Furthermore, it has been well shown in recent years that this
 MSE type loss is largely ineffective for image translation tasks since
 it leads to blurry outputs and poor contrast due to an effective
-averaging of all possible outputs [Summary and note of papers @MSE
-[@Loss; @Blur]]. Without using an L2 Euclidean loss, I do not a priori
+averaging of all possible outputs. Without using an L2 Euclidean loss, I do not a priori
 know what is the best loss function is for this task and for this
 reason, I turn (with ample motivation in literature) to implementation
 of an adversarial loss. In theory, a GAN should not suffer from the mean
 image problem at all by virtue of optimizing an entirely different type
-of mathematical divergence.\
+of mathematical divergence.
 
 Here, I find that the best solution/starting point for this task is to
 implement a conditional adversarial network with a CNN architecture and
@@ -123,7 +81,7 @@ to focus predominantly on framing the problem as an image-to-image
 translation task. The motivation and guidance for which our
 implementation is closely built from is the famous, so-called Pix2Pix
 architecture released in late 2016 by A. Efros’s team at the Berkley AI
-Research Lab [Pix2Pix Github @Pix2Pix [@Github]]. To summarize, an
+Research Lab. To summarize, an
 image-to-image translation task is the problem of translating one
 possible representation of a scene to another given sufficient training
 data. In the past, this has required customized and hand-engineered
@@ -132,16 +90,14 @@ however, the exploration underlying the Pix2Pix implementation was to
 remove that step by creating a general image translation architecture
 which could work across different problems and to demonstrate that a
 conditional generative adversarial network (cGAN) can effectively
-self-learn the required loss function for many different image tasks
-[Image-to-Image Translation Paper @Pix2Pix [@Paper]]. Again, coming up
+self-learn the required loss function for many different image tasks. Again, coming up
 with the loss-function analytically is not only an open-research problem
 but it is a non-trivial task generally requiring expert knowledge since
 the standard L1 and L2 Euclidean distance minimization leads to blur.
 The particular details of the model used in this work is left to the
 Methodology section with rigorous theoretical treatment deferred to the
-original Pix2Pix paper [Image-to-Image Translation Paper @Pix2Pix
-[@Paper]]; however, here I present a high-level summary of the
-architecture’s unique and key features.\
+original Pix2Pix paper; however, here I present a high-level summary of the
+architecture’s unique and key features.
 
 The two fundamental components of the GAN-based architecture are the
 generator and the discriminator–two separate neural networks that are
@@ -164,7 +120,7 @@ CNN generator and discriminator as discussed in the following section.\
 
 ## Deep Learning Model
 The model for the generator and discriminator used in this work is the
-same as that reported in the Pix2Pix paper @Pix2Pix [@Paper] with a
+same as that reported in the Pix2Pix paper with a
 review of the technical details summarized here. For a quick
 visualization, a schematic of the generator is shown in Figure
 [fig:generator] and that of the discriminator is shown in Figure
@@ -256,8 +212,7 @@ tagged images from the imaging hosting website, Danbooru [Danbooru
 URL@DanbooruSite]. This site is ideal for this task since it is
 essentially a large-scale crowdsource and tagged anime dataset with
 nearly 4 million anime images (and reportedly over 108 million image
-tags total allowing quick filtering and searching [Danbooru Machine
-Learning Guide @Danbooru [@Guide]]). Fair Warining: many of the images
+tags total allowing quick filtering and searching). Fair Warining: many of the images
 on this site are arguably not “safe-for-work” content. Using the code
 released on my github, I downloaded approximately 9000 images (at about
 1 second per image) with fantasy themed tags like “holding staff” and

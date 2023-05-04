@@ -124,5 +124,7 @@ where color cues are provided. For emphasis, the former can be
 classified as the unsupervised deep-learning approach while the latter
 is the supervised.
 
-<img src=/images/NoColorCuesResults.png alt="drawing" width="600"/>
-<img src=/images/WithColorCuesResults.png alt="drawing" width="600"/>
+<div style="display:flex">
+  <img src="/images/NoColorCuesResults.png" alt="Alt Text 1" width="46%">
+  <img src="/images/WithColorCuesResults.png " alt="Alt Text 2" width="46%">
+</div>

@@ -1,7 +1,5 @@
 # Deep Learning Color for Manga and Anime Sketches
 
-## [Read the PDF write-up for this project here](Deep_Learning_Color_for_Manga_and_Anime_Sketches.pdf)
-
 ## Overview: The Problem of Colorizing With and Without Color Hints
 <div style="display:flex">
   <img src="/images/ModelSchematic.png" alt="Alt Text 1" width="31%">
